@@ -38,7 +38,7 @@ export default function Home() {
     }
 
     return (
-        <main className="flex min-h-screen flex-col items-center gap-2">
+        <main className="flex min-h-screen flex-col items-center gap-2 scroll-smooth">
             <form
                 onSubmit={onSubmit}
                 className={`
