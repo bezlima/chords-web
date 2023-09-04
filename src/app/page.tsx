@@ -14,6 +14,7 @@ interface IForm {
 
 export default function Home() {
     const [music, setMusic] = useState<string>('')
+    const [loading, setLoading] = useState<boolean>(false)
     const [form, setForm] = useState<IForm>({
         artist: '',
         music: '',
@@ -21,6 +22,7 @@ export default function Home() {
 
     function onSubmit(e: any) {
         e.preventDefault()
+        setLoading(true)
         axios
             .get(`${BaseURL()}chord/${form.artist}/${form.music}/`)
             .then((res) => {
@@ -29,6 +31,7 @@ export default function Home() {
             .catch((error) => {
                 console.error('Erro:', error)
             })
+            .finally(() => setLoading(false))
     }
 
     return (
@@ -53,7 +56,8 @@ export default function Home() {
                 />
                 <Button type="submit"> Pesquisar </Button>
             </form>
-            <HTMLRender music={music} />
+            {loading && <p> Carregando musica ... </p>}
+            <HTMLRender music={music} color="#C9C089" />
         </main>
     )
 }
