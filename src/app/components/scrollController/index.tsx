@@ -52,16 +52,26 @@ export default function ScrollController() {
     }, [isPlaying, startScrolling, stopScrolling])
 
     return (
-        <div>
-            <h1>Mini Scroll Control</h1>
-            <div>
-                <button onClick={() => handleSpeedChange(scrollSpeed - 0.1)}>-</button>
-                <button onClick={togglePlayPause} style={{ scrollBehavior: 'smooth' }}>
-                    {isPlaying ? 'Pause' : 'Play'}
-                </button>
-                <button onClick={() => handleSpeedChange(scrollSpeed + 0.1)}>+</button>
-            </div>
-            <p>Velocidade atual: {scrollSpeed.toFixed(1)} pixels por segundo</p>
+        <div className="bg-teal-800 w-36 h-12 p-2 rounded-md flex items-center justify-between">
+            <button
+                className="bg-white w-8 rounded-full text-xl hover:text-2xl"
+                onClick={() => handleSpeedChange(scrollSpeed - 0.1)}
+            >
+                -
+            </button>
+            <button
+                className="border-b-2 border-white text-md hover:text-lg text-white font-bold"
+                onClick={togglePlayPause}
+                style={{ scrollBehavior: 'smooth' }}
+            >
+                {isPlaying ? 'Pause' : 'Play'}
+            </button>
+            <button
+                className="bg-white w-8 rounded-full text-xl hover:text-2xl"
+                onClick={() => handleSpeedChange(scrollSpeed + 0.1)}
+            >
+                +
+            </button>
         </div>
     )
 }

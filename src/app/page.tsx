@@ -38,7 +38,6 @@ export default function Home() {
 
     return (
         <main className="flex min-h-screen flex-col items-center gap-2 mt-4">
-            <AsideMenu />
             <form
                 onSubmit={onSubmit}
                 className={`
@@ -59,8 +58,13 @@ export default function Home() {
                 />
                 <Button type="submit"> Pesquisar </Button>
             </form>
-            {loading && <p> Carregando musica ... </p>}
-            <HTMLRender music={music} color="#C9C089" />
+            <section className="flex items-start w-full ">
+                <AsideMenu />
+                <span>
+                    {loading && <p> Carregando musica ... </p>}
+                    <HTMLRender music={music} color="#C9C089" />
+                </span>
+            </section>
         </main>
     )
 }
