@@ -7,6 +7,7 @@ import Input from './components/input'
 import axios from 'axios'
 import BaseURL from './baseURL'
 import AsideMenu from './elements/aside'
+import menuOptions from './store'
 
 interface IForm {
     artist: string
@@ -16,6 +17,7 @@ interface IForm {
 export default function Home() {
     const [music, setMusic] = useState<string>('')
     const [loading, setLoading] = useState<boolean>(false)
+    const { color } = menuOptions()
     const [form, setForm] = useState<IForm>({
         artist: 'skank',
         music: 'sutilmente',
@@ -62,7 +64,7 @@ export default function Home() {
                 <AsideMenu />
                 <span>
                     {loading && <p> Carregando musica ... </p>}
-                    <HTMLRender music={music} color="#C9C089" />
+                    <HTMLRender music={music} color={color} />
                 </span>
             </section>
         </main>

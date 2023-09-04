@@ -3,7 +3,7 @@ import { InputHTMLAttributes } from 'react'
 interface IInput extends InputHTMLAttributes<HTMLInputElement> {
     label?: string
     value: string
-    onChange: () => void
+    onChange: any
 }
 
 export default function ColorPick({ label, value, onChange, ...rest }: IInput) {
