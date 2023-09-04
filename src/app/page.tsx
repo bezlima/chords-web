@@ -18,8 +18,8 @@ export default function Home() {
     const [music, setMusic] = useState<string>('')
     const [loading, setLoading] = useState<boolean>(false)
     const [form, setForm] = useState<IForm>({
-        artist: '',
-        music: '',
+        artist: 'skank',
+        music: 'sutilmente',
     })
 
     function onSubmit(e: any) {
@@ -37,13 +37,14 @@ export default function Home() {
     }
 
     return (
-        <main className="flex min-h-screen flex-col items-center gap-2 mt-4">
+        <main className="flex min-h-screen flex-col items-center gap-2">
             <form
                 onSubmit={onSubmit}
                 className={`
                     flex
                     items-center
                     gap-4
+                    mt-4
                 `}
             >
                 <Input
@@ -58,7 +59,7 @@ export default function Home() {
                 />
                 <Button type="submit"> Pesquisar </Button>
             </form>
-            <section className="flex items-start w-full ">
+            <section className="flex items-start w-full h-auto my-8">
                 <AsideMenu />
                 <span>
                     {loading && <p> Carregando musica ... </p>}
