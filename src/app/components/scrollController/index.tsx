@@ -1,3 +1,4 @@
+import menuOptions from '@/app/store'
 import { useCallback, useEffect, useState } from 'react'
 
 export default function ScrollController() {
@@ -52,7 +53,7 @@ export default function ScrollController() {
     }, [isPlaying, startScrolling, stopScrolling])
 
     return (
-        <div className="bg-teal-800 w-36 h-12 p-2 rounded-md flex items-center justify-between">
+        <div className={`bg-teal-800 w-36 h-12 p-2 rounded-md flex items-center justify-between`}>
             <button
                 className="bg-white w-8 rounded-full text-xl hover:text-2xl"
                 onClick={() => handleSpeedChange(scrollSpeed - 0.1)}
