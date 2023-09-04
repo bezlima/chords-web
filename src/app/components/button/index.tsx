@@ -1,6 +1,6 @@
-import { ReactNode } from 'react'
+import { InputHTMLAttributes, ReactNode } from 'react'
 
-interface IButton {
+interface IButton extends InputHTMLAttributes<HTMLButtonElement> {
     children: ReactNode
 }
 

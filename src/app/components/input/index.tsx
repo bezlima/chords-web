@@ -1,12 +1,15 @@
-interface IInput {
+import { InputHTMLAttributes } from 'react'
+
+interface IInput extends InputHTMLAttributes<HTMLInputElement> {
     label?: string
 }
 
-export default function Input({ label }: IInput) {
+export default function Input({ label, ...rest }: IInput) {
     return (
-        <span className="flex items-end gap-3 bg-green-300">
+        <span className="flex items-end gap-3">
             <input
                 id={label}
+                {...rest}
                 type="text"
                 className={`
                         p-1
