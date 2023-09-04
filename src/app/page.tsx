@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Button from './components/button'
 import HTMLRender from './components/htmlRender'
 import Input from './components/input'
+import axios from 'axios'
+import BaseURL from './baseURL'
 
 interface IForm {
     artist: string
@@ -17,8 +19,16 @@ export default function Home() {
         music: '',
     })
 
-    function onSubmit() {
-        alert(form.artist + ' ' + form.music)
+    function onSubmit(e: any) {
+        e.preventDefault()
+        axios
+            .get(`${BaseURL()}chord/${form.artist}/${form.music}/`)
+            .then((res) => {
+                setMusic(res.data.cipher)
+            })
+            .catch((error) => {
+                console.error('Erro:', error)
+            })
     }
 
     return (
