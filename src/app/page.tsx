@@ -6,7 +6,6 @@ import HTMLRender from './components/htmlRender'
 import Input from './components/input'
 import axios from 'axios'
 import BaseURL from './baseURL'
-import ScrollController from './components/scrollController'
 import AsideMenu from './elements/aside'
 
 interface IForm {
