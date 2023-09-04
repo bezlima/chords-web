@@ -6,6 +6,8 @@ import HTMLRender from './components/htmlRender'
 import Input from './components/input'
 import axios from 'axios'
 import BaseURL from './baseURL'
+import ScrollController from './components/scrollController'
+import AsideMenu from './elements/aside'
 
 interface IForm {
     artist: string
@@ -36,6 +38,7 @@ export default function Home() {
 
     return (
         <main className="flex min-h-screen flex-col items-center gap-2 mt-4">
+            <AsideMenu />
             <form
                 onSubmit={onSubmit}
                 className={`
