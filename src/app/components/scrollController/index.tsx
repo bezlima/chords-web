@@ -56,16 +56,16 @@ export default function ScrollController() {
     }, [isPlaying])
 
     return (
-        <div className="bg-teal-800 flex flex-col items-center rounded-md p-4">
-            <p className="bg-teal-800 text-white font-bold mb-1"> Velocidade da tela </p>
-            <div className={`bg-teal-800 w-36 h-12 p-2 rounded-md flex items-center justify-between`}>
+        <div className={`bg-teal-800 flex flex-col items-center rounded-md p-4`}>
+            <p className=" text-white font-bold mb-1"> Velocidade da tela </p>
+            <div className={` w-36 h-12 p-2 rounded-md flex items-center justify-between`}>
                 <button
                     className="bg-white w-8 rounded-full text-xl hover:text-2xl"
                     onClick={() => handleSpeedChange(scrollSpeed - 1.0)}
                 >
                     -
                 </button>
-                <p className="bg-teal-800 text-white font-bold mb-1">{scrollSpeed}</p>
+                <p className=" text-white font-bold mb-1">{scrollSpeed}</p>
                 <button
                     className="bg-white w-8 rounded-full text-xl hover:text-2xl"
                     onClick={() => handleSpeedChange(scrollSpeed + 1.0)}
@@ -74,15 +74,15 @@ export default function ScrollController() {
                 </button>
             </div>
 
-            <p className="bg-teal-800 text-white font-bold mb-1 "> Tempo de inicio</p>
-            <div className={`bg-teal-800 w-36 h-12 p-2 rounded-md flex items-center justify-between`}>
+            <p className=" text-white font-bold mb-1 "> Tempo de inicio</p>
+            <div className={` w-36 h-12 p-2 rounded-md flex items-center justify-between`}>
                 <button
                     className="bg-white w-8 rounded-full text-xl hover:text-2xl"
                     onClick={() => setPlayDelay(playDelay - 1000)}
                 >
                     -
                 </button>
-                <p className="bg-teal-800 text-white font-bold mb-1">{playDelay / 1000} Seg </p>
+                <p className=" text-white font-bold mb-1">{playDelay / 1000} Seg </p>
                 <button
                     className="bg-white w-8 rounded-full text-xl hover:text-2xl"
                     onClick={() => setPlayDelay(playDelay + 1000)}
