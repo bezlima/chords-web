@@ -9,7 +9,7 @@ interface IMenuOptions {
 const menuOptions = create<IMenuOptions>(
     persist(
         (set) => ({
-            color: localStorage.getItem('menuOpts.color') || '#115e59',
+            color: '#115e59',
             setColor: (value: string) => set(() => ({ color: value })),
         }),
         {
